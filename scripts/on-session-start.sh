@@ -142,9 +142,10 @@ EOF
     echo ""
   fi
 
-  cat <<EOF
-## Guidance for this session
-When you encounter a significant design decision, trade-off, or new constraint, append it with \`/claude-kanban:note design <one paragraph>\`. When you make a planning decision (scope change, sequence change, deferred item), use \`/claude-kanban:note plan\`. When you start a self-contained investigation, use \`/claude-kanban:spike <slug>\`. Claim a task with \`/claude-kanban:task <exact text>\` or create a new one with \`/claude-kanban:task-new <text>\`. Be proactive but terse — only log decisions you would not want to lose.
+  cat <<'EOF'
+## Working in a kanban-tracked project
+
+For the full command reference and proactivity heuristics (when to log a decision, restructure a doc, fill the Backlog from chat, etc.), invoke the `claude-kanban:using-claude-kanban` skill.
 EOF
 }
 
