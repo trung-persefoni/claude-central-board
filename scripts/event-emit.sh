@@ -18,8 +18,15 @@ EVENT="${1:-unknown}"
 shift || true
 
 STDIN_JSON=""
+# Read stdin only if data is actually piped in. macOS's system bash is 3.2
+# which doesn't support fractional `read -t` timeouts, so we use perl's
+# IO::Select to do a non-blocking peek (perl is preinstalled on macOS).
+# This avoids `cat` blocking forever on a non-tty pipe with no data.
 if [ ! -t 0 ]; then
-  STDIN_JSON="$(cat)"
+  STDIN_JSON="$(perl -MIO::Select -e '
+    my $s = IO::Select->new(\*STDIN);
+    if ($s->can_read(0.2)) { local $/; print <STDIN>; }
+  ' 2>/dev/null || true)"
 fi
 
 field_from_stdin() {

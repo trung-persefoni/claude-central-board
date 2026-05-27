@@ -7,9 +7,7 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>{{BUN_PATH}}</string>
-        <string>run</string>
-        <string>{{RECONCILER_PATH}}</string>
+        <string>{{RECONCILER_BIN}}</string>
     </array>
 
     <key>EnvironmentVariables</key>
@@ -22,11 +20,16 @@
         <string>{{PATH}}</string>
     </dict>
 
-    <key>StartInterval</key>
-    <integer>{{INTERVAL_SECONDS}}</integer>
+    <key>WatchPaths</key>
+    <array>
+        <string>{{EVENTS_FILE}}</string>
+    </array>
 
     <key>RunAtLoad</key>
     <true/>
+
+    <key>KeepAlive</key>
+    <false/>
 
     <key>StandardOutPath</key>
     <string>{{LOG_PATH}}</string>
@@ -36,5 +39,8 @@
 
     <key>ProcessType</key>
     <string>Background</string>
+
+    <key>LowPriorityIO</key>
+    <true/>
 </dict>
 </plist>
