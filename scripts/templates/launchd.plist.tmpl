@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>{{LABEL}}</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>{{BUN_PATH}}</string>
+        <string>run</string>
+        <string>{{RECONCILER_PATH}}</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>CLAUDE_PLUGIN_ROOT</key>
+        <string>{{PLUGIN_ROOT}}</string>
+        <key>CLAUDE_KANBAN_DATA_DIR</key>
+        <string>{{DATA_DIR}}</string>
+        <key>PATH</key>
+        <string>{{PATH}}</string>
+    </dict>
+
+    <key>StartInterval</key>
+    <integer>{{INTERVAL_SECONDS}}</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>{{LOG_PATH}}</string>
+
+    <key>StandardErrorPath</key>
+    <string>{{LOG_PATH}}</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+{
+  "name": "claude-kanban",
+  "owner": {
+    "name": "Trung Cong",
+    "email": "trung.cong@persefoni.com"
+  },
+  "metadata": {
+    "description": "Project-first Obsidian workspace for Claude Code sessions.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-kanban",
+      "source": "./",
+      "description": "Project-first Obsidian workspace for Claude Code: per-project plan/design/tasks/sessions, with hook-driven liveness tracking and proactive session briefing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Trung Cong"
+      },
+      "license": "MIT",
+      "keywords": [
+        "obsidian",
+        "kanban",
+        "sessions",
+        "project-tracking",
+        "hooks",
+        "workflow"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
